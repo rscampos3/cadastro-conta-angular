@@ -1,0 +1,25 @@
+<div class="form-container">
+  <h3 style="text-align:center">Cadastre uma conta</h3>
+  <form class="form">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Nome Completo">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Limite de Crédito">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Selecione a Taxa de Risco</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let risco of riscos" [value]="risco.value">
+            {{risco.value + ' - ' + risco.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+        Cadastrar
+    </button>
+    
+  </form>
+
+</div>

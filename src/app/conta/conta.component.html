@@ -1,0 +1,23 @@
+<h3 style="text-align: center">Listar Contas Cadastradas</h3>
+<table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Limite de crédito</th>
+            <th scope="col">Risco</th>
+            <th scope="col">Taxa de juros</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let conta of contas">
+          <tr>
+            <th scope="row">{{conta.id}}</th>
+            <td>{{conta.nomeCliente}}</td>
+            <td>{{conta.limiteCredito | currency: 'BRL':true}}</td>
+            <td>{{conta.risco}}</td>
+            <td>{{conta.taxaDeJuros + '%'}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+
