@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CadastroComponent } from './cadastro.component';
+import { ContaDeleteComponent } from './conta-delete.component';
 
-describe('CadastroComponent', () => {
-  let component: CadastroComponent;
-  let fixture: ComponentFixture<CadastroComponent>;
+describe('ContaDeleteComponent', () => {
+  let component: ContaDeleteComponent;
+  let fixture: ComponentFixture<ContaDeleteComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CadastroComponent ]
+      declarations: [ ContaDeleteComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CadastroComponent);
+    fixture = TestBed.createComponent(ContaDeleteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

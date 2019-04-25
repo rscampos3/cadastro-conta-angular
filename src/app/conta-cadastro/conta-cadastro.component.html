@@ -1,0 +1,21 @@
+<div class="form-container">
+  <h3 style="text-align:center">Cadastre uma conta</h3>
+  <form class="form" [formGroup]="contaForm" (ngSubmit)="addConta(contaForm.value)">
+    <mat-form-field class="full-width">
+      <input matInput name="nomeCliente" placeholder="Nome Completo" formControlName="nomeCliente">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput name="limiteCredito" placeholder="Limite de Crédito" formControlName="limiteCredito">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Selecione a Taxa de Risco</mat-label>
+        <mat-select  name="risco" formControlName="risco">
+          <mat-option *ngFor="let ris of riscos" [value]="ris">
+              {{ris}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <br>
+    <button type="submit"  [disabled]="!contaForm.valid" mat-button class="btn btn-primary">Adicionar</button>
+  </form>
+</div>

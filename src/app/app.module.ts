@@ -1,19 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'; 
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule,  MatFormFieldModule, MatInputModule, MatRippleModule} from '@angular/material';
+import {MatProgressSpinnerModule, MatCardModule, MatIconModule, MatButtonModule, MatCheckboxModule,  MatFormFieldModule, MatInputModule, MatRippleModule, MatTableModule } from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
 
 import { AppComponent } from './app.component';
-import { CadastroComponent } from './cadastro/cadastro.component';
 import { ContaComponent } from './conta/conta.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { registerLocaleData } from '@angular/common';
 import localeBr from '@angular/common/locales/pt';
-import localeBrExtra from '@angular/common/locales/extra/pt';
+import { ContaCadastroComponent } from './conta-cadastro/conta-cadastro.component';
+import { ContaDetalheComponent } from './conta-detalhe/conta-detalhe.component';
+import { ContaDeleteComponent } from './conta-delete/conta-delete.component';
+import { ContaAtualizaComponent } from './conta-atualiza/conta-atualiza.component';
+
 
 registerLocaleData(localeBr);
 
@@ -22,14 +26,22 @@ const matModules = [
   MatFormFieldModule,
   MatInputModule,
   MatRippleModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatTableModule,
+  MatSelectModule,
+  MatCardModule,
+  MatProgressSpinnerModule,
+  MatIconModule 
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    CadastroComponent,
-    ContaComponent
+    ContaComponent,
+    ContaCadastroComponent,
+    ContaDetalheComponent,
+    ContaDeleteComponent,
+    ContaAtualizaComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +49,7 @@ const matModules = [
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSelectModule,
+    HttpClientModule,
     matModules
   ],
   exports: [

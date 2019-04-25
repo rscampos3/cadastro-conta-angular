@@ -1,0 +1,23 @@
+<div class="form-container">
+  <h3 style="text-align: center">Detalhe da Conta</h3>
+  <div class="example-loading-shade"
+         *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+      <button mat-flat-button color="accent" [routerLink]="['/contas']">Voltar</button>
+  </div>
+  <br>
+  <h2>{{conta.nomeCliente}}</h2>
+  <p>Categoria de risco: {{conta.risco}}</p>
+  <br>
+  <dl>
+    <dt>Valor:</dt>
+    <dd>{{conta.limiteCredito | currency: 'BRL':true}}</dd>
+    <dt>Taxa de juros:</dt>
+    <dd>{{conta.taxaDeJuros + '%'}}</dd>
+  </dl>
+  <br>
+  <button type="button" class="btn btn-info" [routerLink]="['/conta-edita', conta.id]" style="margin-right: 5px">Editar</button>
+  <button type="button" class="btn btn-danger" (click)="deleteConta(conta.id)">Excluir</button>
+</div>
